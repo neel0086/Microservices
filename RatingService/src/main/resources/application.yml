@@ -3,10 +3,20 @@ server:
 
 
 spring:
+  application:
+    name: RATING-SERVICE
   data:
     mongodb:
       uri: mongodb+srv://neel:neel@ratings.l9tewsm.mongodb.net/?retryWrites=true&w=majority
       database: microservices
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
 #spring.security.user.name=neel
 #spring.security.user.password=neel
 #spring.security.user.roles=Admin
