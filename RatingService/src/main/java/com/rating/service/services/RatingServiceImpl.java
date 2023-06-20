@@ -23,8 +23,19 @@ public class RatingServiceImpl implements RatingService {
         return ratingRepository.findAll();
     }
 
+
+
     @Override
-    public Rating getRating(Long id) {
-        return ratingRepository.findById(id).orElseThrow(()->new ResourceNotFoundException("Given user not found"));
+    public List<Rating> getRatingByUserId(Long userId){
+        return ratingRepository.findByUserId(userId);
     }
+
+    @Override
+    public List<Rating> getRatingByHotelId(Long userId){
+        return ratingRepository.findByHotelId(userId);
+    }
+
+
+
+
 }

@@ -18,11 +18,12 @@ import java.util.List;
 @Document("Rating")
 public class Rating {
     @Id
-    private int id;
+    private int ratingId;
 
-    private String name;
-    private String email;
-    private String about;
+    private int userId;
+    private int hotelId;
+    private int rating;
+    private String feedback;
 
 
 

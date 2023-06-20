@@ -1,11 +1,12 @@
 server:
-  port: 8081
+  port: 8083
 
 
 spring:
-  datasource:
-    url: mongodb+srv://neel:neel@ratings.l9tewsm.mongodb.net/?retryWrites=true&w=majority
-    database: microservices
+  data:
+    mongodb:
+      uri: mongodb+srv://neel:neel@ratings.l9tewsm.mongodb.net/?retryWrites=true&w=majority
+      database: microservices
 #spring.security.user.name=neel
 #spring.security.user.password=neel
 #spring.security.user.roles=Admin
