@@ -19,7 +19,7 @@ import java.util.List;
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int hotelId;
+    private Long hotelId;
 
     @Column(name="user_name",nullable = false,length=100)
     private String name;
