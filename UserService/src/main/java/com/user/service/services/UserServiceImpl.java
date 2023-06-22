@@ -40,10 +40,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUser(Long userId) {
         User user = userRepository.findById(userId).orElseThrow(()->new ResourceNotFoundException("Given user not found"));
-        Rating[] ratingOfUser =  restTemplate.getForObject("http://localhost:8083/ratings/users/"+user.getUserId(), Rating[].class);
+        Rating[] ratingOfUser =  restTemplate.getForObject("http://RATING-SERVICE/ratings/users/"+user.getUserId(), Rating[].class);
         List<Rating> ratings = Arrays.stream(ratingOfUser).toList();
         List<Rating> ratingList = ratings.stream().map(rating -> {
-            ResponseEntity<Hotel> forEntity = restTemplate.getForEntity("http://localhost:8082/hotels/"+rating.getHotelId(), Hotel.class);
+            ResponseEntity<Hotel> forEntity = restTemplate.getForEntity("http://HOTEL-SERVICE/hotels/"+rating.getHotelId(), Hotel.class);
             Hotel hotel = forEntity.getBody();
             rating.setHotel(hotel);
             return rating;
