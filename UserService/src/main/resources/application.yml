@@ -44,7 +44,7 @@ management:
 resilience4j:
   circuitbreaker:
     instances:
-      ratingHotelBreaker:
+      hotelRatingBreaker:
         registerHealthIndicator: true
         eventConsumerBufferSize: 10
         failureRateThreshold: 50
